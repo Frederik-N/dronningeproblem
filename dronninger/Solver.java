@@ -1,6 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.Arrays;
-
+import java.lang.System;
 
  
 public class Solver
@@ -11,10 +11,14 @@ public class Solver
     
     public void findAllSolutions(int noOfQueens)
     {
+        noOfSolutions = 0;
         this.noOfQueens = noOfQueens;
         queens = new int[noOfQueens+1];
+        long beginTime = System.currentTimeMillis();
         positionQueens(0);
+        long endTime = System.currentTimeMillis();
         System.out.println(noOfSolutions);
+        System.out.println(endTime-beginTime+" ms");
         
     }
     
