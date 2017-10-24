@@ -26,11 +26,10 @@ public class Solver
             for(int col = 0; col<noOfQueens; col++) {
                 if(noOfQueens==row) {
                     noOfSolutions += 1;
-                    Array.setInt(queens, row, 0);
                     return;
                 }
                 else if(legal(row,col)) {
-                    Array.setInt(queens, row, col);
+                    queens[row] = col;
                     positionQueens(row+1);
                 }
             }
