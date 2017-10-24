@@ -17,6 +17,7 @@ public class Solver
     {
         // initialise instance variables
         x = 0;
+        // Niggay
     }
 
     /**
