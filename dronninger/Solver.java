@@ -43,10 +43,7 @@ public class Solver
             if(Array.getInt(queens, i)==col) {
                 return false;
             }
-            else if(Array.getInt(queens, i)==k) {
-                return false;
-            }
-            else if(Array.getInt(queens, i)==p) {
+            else if(Array.getInt(queens, i)==k || Array.getInt(queens, i)==p) {
                 return false;
             }
             k++;
