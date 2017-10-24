@@ -1,10 +1,13 @@
 #BlueJ class context
 comment0.target=Solver
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Solver\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=Solver()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Solver\r\n
-comment2.params=y
-comment2.target=int\ sampleMethod(int)
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
-numComments=3
+comment1.params=noOfQueens
+comment1.target=void\ findAllSolutions(int)
+comment2.params=row
+comment2.target=void\ positionQueens(int)
+comment3.params=row\ col
+comment3.target=boolean\ legal(int,\ int)
+comment4.params=
+comment4.target=void\ printSolution()
+comment5.params=row\ col
+comment5.target=java.lang.String\ convert(int,\ int)
+numComments=6

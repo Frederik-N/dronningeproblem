@@ -1,33 +1,61 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
-/**
- * Write a description of class Solver here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+
+ 
 public class Solver
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Solver
-     */
-    public Solver()
+    private int noOfQueens;
+    private int[] queens;
+    private int noOfSolutions;
+    
+    public void findAllSolutions(int noOfQueens)
     {
-        // initialise instance variables
-        x = 0;
+        this.noOfQueens = noOfQueens;
+        queens = new int[noOfQueens+1];
+        positionQueens(0);
+        System.out.println(noOfSolutions);
+        
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    private void positionQueens(int row) {
+            for(int col = 0; col<noOfQueens; col++) {
+                if(noOfQueens==row) {
+                    noOfSolutions += 1;
+                    Array.setInt(queens, row, 0);
+                    return;
+                }
+                else if(legal(row,col)) {
+                    Array.setInt(queens, row, col);
+                    positionQueens(row+1);
+                }
+            }
+    }
+    
+    private boolean legal(int row, int col) {
+        int k = col+1;
+        int p = col-1;
+        for(int i = row-1; i>=0; i--) {
+            if(Array.getInt(queens, i)==col) {
+                return false;
+            }
+            else if(Array.getInt(queens, i)==k) {
+                return false;
+            }
+            else if(Array.getInt(queens, i)==p) {
+                return false;
+            }
+            k++;
+            p--;
+        }
+        return true;
+        }
+    
+    private void printSolution() {
+        
+    }
+    
+    private String convert(int row, int col) {
+        return "";
     }
 }
