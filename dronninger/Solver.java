@@ -33,7 +33,7 @@ public class Solver
     }
 
     /**
-     *
+     * Du laver det her shit
      * @param row
      */
     private void positionQueens(int row) {
