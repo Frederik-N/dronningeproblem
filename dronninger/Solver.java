@@ -10,7 +10,7 @@ public class Solver
     private int noOfSolutions;
 
     /**
-     *
+     * Du laver det her shit
      * @param noOfQueens
      */
     public void findAllSolutions(int noOfQueens)
@@ -33,7 +33,7 @@ public class Solver
     }
 
     /**
-     * Du laver det her shit
+     *
      * @param row
      */
     private void positionQueens(int row) {
