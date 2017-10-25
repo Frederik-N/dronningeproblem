@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.lang.System;
 
  
@@ -58,17 +56,12 @@ public class Solver
      * @return
      */
     private boolean legal(int row, int col) {
-        int k = col+1;
-        int p = col-1;
+        int k = 1;
         for(int i = row-1; i>=0; i--) {
-            if(Array.getInt(queens, i)==col) {
-                return false;
-            }
-            else if(Array.getInt(queens, i)==k || Array.getInt(queens, i)==p) {
+            if(queens[i]==col || queens[i]==col-k || queens[i]==col+k) {
                 return false;
             }
             k++;
-            p--;
         }
         return true;
     }
@@ -94,6 +87,6 @@ public class Solver
 
     public static void main(String[] args) {
         Solver test = new Solver();
-        test.findAllSolutions(6);
+        test.findAllSolutions(16);
     }
 }
