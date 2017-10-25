@@ -17,7 +17,7 @@ public class Solver
     {
         noOfSolutions = 0;
         this.noOfQueens = noOfQueens;
-        queens = new int[noOfQueens+1];
+        queens = new int[noOfQueens];
 
         System.out.println("*-----------------------------------*");
         System.out.println(" Solutions for "+noOfQueens+" queens:");
