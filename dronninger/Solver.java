@@ -8,8 +8,8 @@ public class Solver
     private int noOfSolutions;
 
     /**
-     * Du laver det her shit
-     * @param noOfQueens
+     * Finder antal løsninger på dronningeproblemet med noOfQueens dronninger.
+     * @param noOfQueens Antal dronninger, der skal være på skakbrættet.
      */
     public void findAllSolutions(int noOfQueens)
     {
@@ -31,8 +31,8 @@ public class Solver
     }
 
     /**
-     *
-     * @param row
+     * Gennemgår alle mulige positioner for dronninger.
+     * @param row Række på skakbrættet
      */
     private void positionQueens(int row) {
             if (noOfQueens == row) {
@@ -50,10 +50,11 @@ public class Solver
     }
 
     /**
-     *
-     * @param row
-     * @param col
-     * @return
+     * Tjekker om dronningen kan indsættes på den givne position.
+     * @param row Række på skakbrættet
+     * @param col Kolonne på skakbrættet
+     * @return True (hvis dronningen kan indsættes)
+     *         False(hvis dronningen ikke kan indsættes)
      */
     private boolean legal(int row, int col) {
         int k = 1;
@@ -67,7 +68,7 @@ public class Solver
     }
 
     /**
-     *
+     * Printer løsningerne ud på terminalen.
      */
     private void printSolution() {
         for (int i=0; i<queens.length; i++) {
@@ -77,16 +78,20 @@ public class Solver
 
     /**
      *
-     * @param row
-     * @param col
-     * @return
+     * @param row Række på skakbrættet.
+     * @param col Kolonne på skakbrættet.
+     * @return returnerer en string, som giver række og kolonne værdier
+     *  som på et skakbræt.
      */
     private String convert(int row, int col) {
         return String.valueOf((char)('a'+row))+(col+1);
     }
-
+    
+    /**
+     * Testmetode til Solver
+     */
     public static void main(String[] args) {
         Solver test = new Solver();
-        test.findAllSolutions(16);
+        test.findAllSolutions(8);
     }
 }
