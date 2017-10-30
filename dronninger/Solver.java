@@ -8,6 +8,7 @@ public class Solver
     private int noOfSolutions;
     private boolean showSolutions;
     private int time;
+    private  boolean showResult = true;
 
     /**
      * Finder antal løsninger på dronningeproblemet med noOfQueens dronninger.
@@ -19,20 +20,22 @@ public class Solver
         this.noOfQueens = noOfQueens;
         queens = new int[noOfQueens];
 
-        /*System.out.println("*-----------------------------------*");
-        System.out.println(" Solutions for "+noOfQueens+" queens:");
-        System.out.println();
-        */
+        if (showResult) {
+            System.out.println("*-----------------------------------*");
+            System.out.println(" Solutions for " + noOfQueens + " queens:");
+            System.out.println();
+        }
 
         long beginTime = System.currentTimeMillis();
         positionQueens(0);
         long endTime = System.currentTimeMillis();
         time = (int) (endTime-beginTime);
 
-        /*System.out.println();
-        System.out.println(" A total of "+noOfSolutions+" solutions were found in "+(endTime-beginTime)+" ms");
-        System.out.println("*-----------------------------------*");
-        */
+        if (showResult) {
+            System.out.println();
+            System.out.println(" A total of " + noOfSolutions + " solutions were found in " + (endTime - beginTime) + " ms");
+            System.out.println("*-----------------------------------*");
+        }
     }
 
     /**
@@ -42,8 +45,10 @@ public class Solver
     private void positionQueens(int row) {
             if (noOfQueens == row) {
                 noOfSolutions += 1;
-                //printSolution();
-                //System.out.println();
+                if (showResult) {
+                    printSolution();
+                    System.out.println();
+                }
             }
 
             for(int col = 0; col<noOfQueens; col++) {
@@ -88,10 +93,12 @@ public class Solver
     private void findNoOfSolutions(int min, int max) {
         System.out.println("*------------------------*");
         System.out.println("Queens          Solutions     Time(ms)    Solutions/ms");
+        showResult = false;
         for(int i = min; i<=max; i++) {
             findAllSolutions(i);
             System.out.format("   %3d %,12d    %,8d       %,8d %n", noOfQueens, noOfSolutions, (time+1), noOfSolutions/(time+1));
         }
+        showResult = true;
         System.out.println("*------------------------*");
     }
 
@@ -110,7 +117,7 @@ public class Solver
      */
     public static void main(String[] args) {
         Solver test = new Solver();
-        test.findAllSolutions(8);
-        test.findNoOfSolutions(5, 12);
+        test.findAllSolutions(6);
+        test.findNoOfSolutions(1, 6);
     }
 }
