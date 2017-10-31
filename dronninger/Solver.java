@@ -67,12 +67,10 @@ public class Solver
      *         False(hvis dronningen ikke kan indsættes)
      */
     private boolean legal(int row, int col) {
-        int k = 1;
-        for(int i = row-1; i>=0; i--) {
-            if(queens[i]==col || queens[i]==col-k || queens[i]==col+k) {
+        for(int i = 0; i<row; i++) {
+            if(queens[i]==col || queens[i]-col==row-i || col-queens[i]==row-i) {
                 return false;
             }
-            k++;
         }
         return true;
     }
@@ -117,7 +115,7 @@ public class Solver
      */
     public static void main(String[] args) {
         Solver test = new Solver();
-        test.findAllSolutions(6);
+        test.findAllSolutions(8);
         test.findNoOfSolutions(1, 6);
     }
 }
