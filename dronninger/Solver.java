@@ -107,7 +107,7 @@ public class Solver
      *  som på et skakbræt.
      */
     private String convert(int row, int col) {
-        return String.valueOf((char)('a'+row))+(col+1);
+        return String.valueOf((char)('a'+col))+(row+1);
     }
 
     /**
@@ -115,7 +115,7 @@ public class Solver
      */
     public static void main(String[] args) {
         Solver test = new Solver();
-        test.findAllSolutions(8);
-        test.findNoOfSolutions(1, 6);
+        test.findAllSolutions(6);
+        test.findNoOfSolutions(1,12);
     }
 }

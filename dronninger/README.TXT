@@ -1,12 +1,5 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
+Undersøgelse af hvornår man kan finde alle løsninger på under 3 min:
+findAllSolutions(16): 3,8 min
+findAllSolutions(15): 0,5 min
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+Vi kan maks sætte antal dronninger til 15 indenfor kravene.
