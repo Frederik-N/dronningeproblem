@@ -44,7 +44,7 @@ public class Solver
      */
     private void positionQueens(int row) {
             if (noOfQueens == row) {
-                noOfSolutions += 1;
+                noOfSolutions++;
                 if (showResult) {
                     printSolution();
                     System.out.println();
@@ -85,8 +85,9 @@ public class Solver
     }
 
     /**
-     * @param min
-     * @param max
+     * Finder antal løsninger for hver dronningerproblem fra min til max.
+     * @param min Mindste dronningeproblem der skal løses.
+     * @param max Største dronningeproblem der skal løses.
      */
     private void findNoOfSolutions(int min, int max) {
         System.out.println("*------------------------*");
